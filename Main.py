@@ -33,6 +33,8 @@ class SistemaRegistros:
         self.registros.append(registro)
         print("Registro agregado con éxito.")
 
+
+
     def buscar_registro(self):
         carnet = input("Ingrese el carnet a buscar: ")
         for registro in self.registros:
@@ -42,23 +44,6 @@ class SistemaRegistros:
                 return
         print("Registro no encontrado.")
 
-    def ordenar_registros(self):
-        print("Ordenar por: 1) Carnet 2) Nombre 3) Carrera 4) Color")
-        opcion = input("Seleccione una opción (1-4): ")
-        if opcion == '1':
-            self.registros.sort(key=lambda x: x.carnet)
-        elif opcion == '2':
-            self.registros.sort(key=lambda x: x.nombre)
-        elif opcion == '3':
-            self.registros.sort(key=lambda x: x.carrera)
-        elif opcion == '4':
-            self.registros.sort(key=lambda x: x.color)
-        else:
-            print("Opción inválida.")
-            return
-        print("Registros ordenados:")
-        for registro in self.registros:
-            print(registro)
 
     def guardar_registros(self):
         with open("registros.txt", "w") as archivo:
@@ -77,7 +62,7 @@ class SistemaRegistros:
             if len(self.registros) >= 15:
                 print("5) Salir")
             opcion = input("Seleccione una opción (1-5): " if len(self.registros) >= 15 else "Seleccione una opción (1-4): ")
-            
+
             if opcion == '1':
                 self.agregar_registro()
             elif opcion == '2':
@@ -95,4 +80,3 @@ class SistemaRegistros:
 
 sistema = SistemaRegistros()
 sistema.menu()
-    
