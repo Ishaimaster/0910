@@ -45,7 +45,6 @@ class SistemaRegistros:
         print("Registro no encontrado.")
 
 
-    #borre el ordenar xd
 
     def guardar_registros(self):
         with open("registros.txt", "w") as archivo:
